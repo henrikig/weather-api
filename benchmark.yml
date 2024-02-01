@@ -1,0 +1,11 @@
+---
+
+base: 'http://localhost:8080'
+iterations: 20
+
+plan:
+
+  - name: Fetch some cities from CSV
+    request:
+      url: /weather?city={{ item.CITY }}
+    with_items_from_csv: ./cities.csv
